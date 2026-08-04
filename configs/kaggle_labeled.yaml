@@ -1,0 +1,74 @@
+seed: 42
+
+device: cpu
+
+
+
+data:
+
+  name: kaggle_labeled
+
+  csv_path: data/kaggle/labeled_series.csv
+
+  label_col: label
+
+  # value_cols: [col_a, col_b]   # optional; auto-detect numeric columns
+
+  # timestamp_col: timestamp
+
+  train_ratio: 0.5
+
+  val_ratio: 0.0
+
+  window_size: 100
+
+  stride: 10
+
+  max_val_windows: 200
+
+  max_test_windows: 400
+
+
+
+model:
+
+  channels: 1
+
+  base_channels: 32
+
+  timesteps: 100
+
+
+
+train:
+
+  epochs: 20
+
+  batch_size: 16
+
+  lr: 0.001
+
+  early_stop_patience: 5
+
+
+
+scoring:
+
+  diffusion_steps: [25, 50, 75]
+
+
+
+eval:
+
+  threshold_method: f1
+
+
+
+paths:
+
+  checkpoint_dir: checkpoints/kaggle_labeled
+
+  output_dir: outputs/kaggle_labeled
+
+  results_dir: results/kaggle_labeled
+

@@ -1,0 +1,46 @@
+seed: 42
+device: cpu
+
+data:
+  name: synthetic_stream   # synthetic_stream | csv
+  window_size: 128
+  stride: 64
+  train_ratio: 0.6
+  val_ratio: 0.2
+  # csv_path: data/my_series.csv  # columns: value[, label]
+
+model:
+  channels: 1
+  base_channels: 32
+  timesteps: 100
+  transformer_ae:
+    d_model: 64
+    nhead: 4
+    num_layers: 2
+    dim_feedforward: 128
+    latent_size: 32
+    dropout: 0.1
+  tranad:
+    dim_feedforward: 16
+    dropout: 0.1
+
+train:
+  epochs: 40
+  batch_size: 32
+  lr: 0.001
+  early_stop_patience: 8
+  ema:
+    enabled: false
+    decay: 0.999
+
+scoring:
+  diffusion_steps: [25, 50, 75]   # start_t values for DRE ensemble
+  reconstruct_method: ddpm        # ddpm | ddim
+  ddim_steps: 20                  # DDIM subsampling steps (faster inference)
+  ddim_eta: 0.0
+  threshold_metric: f1            # f1 on validation
+
+paths:
+  checkpoint_dir: checkpoints
+  output_dir: outputs
+  results_dir: results

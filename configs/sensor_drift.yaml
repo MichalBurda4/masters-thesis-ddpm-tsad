@@ -1,0 +1,76 @@
+seed: 42
+
+device: cpu
+
+
+
+data:
+
+  name: sensor_drift
+
+  data_dir: data/sensor_drift
+
+  label_mode: drift          # drift | zscore
+
+  train_batches: 3           # first N UCI batches = normal
+
+  val_ratio: 0.15
+
+  window_size: 100
+
+  stride: 20
+
+  max_rows_per_batch: null
+
+  max_val_windows: 250
+
+  max_test_windows: 400
+
+
+
+model:
+
+  channels: 128
+
+  base_channels: 32
+
+  timesteps: 100
+
+
+
+train:
+
+  epochs: 20
+
+  batch_size: 16
+
+  lr: 0.001
+
+  early_stop_patience: 5
+
+
+
+scoring:
+
+  diffusion_steps: [25, 50, 75]
+
+  reconstruct_method: ddpm   # ddpm | ddim
+
+  ddim_steps: 20
+
+
+
+eval:
+
+  threshold_method: f1
+
+
+
+paths:
+
+  checkpoint_dir: checkpoints/sensor_drift
+
+  output_dir: outputs/sensor_drift
+
+  results_dir: results/sensor_drift
+

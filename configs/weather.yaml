@@ -1,0 +1,31 @@
+seed: 42
+device: cpu
+
+data:
+  name: weather
+  csv_path: data/weather/weather.csv
+  train_ratio: 0.7
+  val_ratio: 0.15
+  window_size: 96
+  stride: 12
+  max_val_windows: 300
+  max_test_windows: 500
+
+model:
+  channels: 21
+  base_channels: 32
+  timesteps: 100
+
+train:
+  epochs: 25
+  batch_size: 16
+  lr: 0.001
+  early_stop_patience: 6
+
+scoring:
+  diffusion_steps: [25, 50, 75]
+
+paths:
+  checkpoint_dir: checkpoints/weather
+  output_dir: outputs/weather
+  results_dir: results/weather

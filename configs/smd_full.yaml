@@ -1,0 +1,39 @@
+seed: 42
+device: cpu
+
+data:
+  name: smd
+  smd_root: data/SMD
+  machine: machine-1-1
+  window_size: 100
+  stride: 5
+  max_val_windows: null
+  max_test_windows: null
+
+model:
+  channels: 38
+  base_channels: 32
+  timesteps: 100
+
+train:
+  epochs: 60
+  batch_size: 16
+  lr: 0.001
+  early_stop_patience: 12
+  ema:
+    enabled: true
+    decay: 0.999
+
+scoring:
+  diffusion_steps: [25, 50, 75]
+
+eval:
+  threshold_method: f1
+  pot_init_q: 0.98
+  pot_train_max_windows: 300
+  percentile_q: 95.0
+
+paths:
+  checkpoint_dir: checkpoints/smd_full
+  output_dir: outputs/smd_full
+  results_dir: results/smd_full

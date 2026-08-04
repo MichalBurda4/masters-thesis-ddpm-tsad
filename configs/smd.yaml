@@ -1,0 +1,36 @@
+seed: 42
+device: cpu
+
+data:
+  name: smd
+  smd_root: data/SMD
+  machine: machine-1-1
+  window_size: 100
+  stride: 10          # larger stride = faster experiments on CPU
+  max_val_windows: 200
+  max_test_windows: 400
+
+model:
+  channels: 38        # auto-overwritten from data if multivariate
+  base_channels: 32
+  timesteps: 100
+
+train:
+  epochs: 20
+  batch_size: 16
+  lr: 0.001
+  early_stop_patience: 5
+
+scoring:
+  diffusion_steps: [25, 50, 75]
+
+eval:
+  threshold_method: f1      # f1 | pot | percentile
+  pot_init_q: 0.98
+  pot_train_max_windows: 150
+  percentile_q: 95.0
+
+paths:
+  checkpoint_dir: checkpoints/smd
+  output_dir: outputs/smd
+  results_dir: results/smd

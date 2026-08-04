@@ -1,0 +1,24 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Dane i modele (duże pliki — pobierz skryptami)
+data/
+checkpoints/
+results/
+outputs/
+logs/
+*.pt
+*.zip
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Osobiste notatki (opcjonalnie)
+magisterka.txt
