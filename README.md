@@ -31,7 +31,6 @@ This repository implements an experimental pipeline for **anomaly detection and 
 │   └── eval/             # Metrics, threshold selection, evaluation runner
 ├── experiments/          # Training, evaluation, ablation, benchmarking
 ├── scripts/              # Dataset download scripts, PLGrid helpers
-├── prototype/            # Early 1D proof-of-concept (kept for reference)
 ├── data/                 # Datasets (not tracked — download locally)
 ├── checkpoints/          # Saved models (not tracked)
 └── results/              # Metrics & summaries (not tracked)
