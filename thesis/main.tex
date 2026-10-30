@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Master's thesis — AGH WI (agh-wi class)
+% Field: Artificial Intelligence and Data Analysis
+% Compiler: pdfLaTeX + biber (see README_OVERLEAF.md)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Class options:
+%   english     — English body (title page still bilingual)
+%   print       — two-sided margins for print (optional: [english,print])
+%   ds          — field label "Informatyka — Data Science"
+%   umisi       — field label "Informatyka — Uczenie Maszynowe i Sztuczna Inteligencja"
+% Default field without ds/umisi: "Informatyka".
+% AIDA is closest to Informatyka; switch to [english,ds] or [english,umisi]
+% if your dean's office requires that programme label on the title page.
+\documentclass[english]{agh-wi}
+% \documentclass[english,print]{agh-wi}
+% \documentclass[english,ds]{agh-wi}
+% \documentclass[english,umisi]{agh-wi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title-page parameters (English-only front matter)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titlePL{Anomaly Detection in Multivariate Time Series Using Probabilistic Diffusion Models}
+\titleEN{Anomaly Detection in Multivariate Time Series Using Probabilistic Diffusion Models}
+\author{Michał Burda}
+\supervisor{dr Piotr Szwed}
+% English programme label on the title page (override Polish default from the class).
+\def\fieldOfStudy{Artificial Intelligence and Data Analysis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages (Overleaf-friendly skeleton)
+% Skipped vs full demo: minted (-shell-escape), nomencl (makeindex)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[sorting=none]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{listings} % optional; enable \lstlistoflistings in front matter if used
+\usepackage{hyperref}
+\usepackage{csquotes}
+% Do NOT load \usepackage{polski} as main language — babel already loads
+% polish as a secondary language under the english class option.
+
+\addbibresource{bibliography.bib}
+
+\definecolor{shadecolor}{gray}{0.9}
+\newcommand{\alert}[1]{\colorbox{red!50}{#1}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{flushright}
+    \em
+    \begin{minipage}{0.75\textwidth}
+        % TODO: Acknowledgements (optional).
+        I would like to thank my supervisor, dr Piotr Szwed, for guidance and support.
+    \end{minipage}
+\end{flushright}
+
+% English-only thesis: single Abstract page (no separate Polish Streszczenie).
+\begin{abstractEN}
+    % TODO: 150--250 words: problem, method (DDPM + partial diffusion), datasets, main findings.
+    \textit{[Abstract --- to be completed.]}
+\end{abstractEN}
+
+\tableofcontents
+\listoffigures
+\listoftables
+% \listofalgorithms  % uncomment if you use algorithm2e floats
+% \lstlistoflistings % uncomment if you use the listings package
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{tex/01_introduction}
+\include{tex/02_related_work}
+\include{tex/03_background}
+\include{tex/04_method}
+\include{tex/05_implementation}
+\include{tex/06_experiments}
+\include{tex/07_results}
+\include{tex/08_discussion}
+\include{tex/09_conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{tex/A_appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Skeleton: list all .bib entries even without \cite{} yet.
+\nocite{*}
+\printbibliography
+
+\end{document}

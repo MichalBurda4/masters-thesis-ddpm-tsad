@@ -1,0 +1,32 @@
+\chapter{Proposed Method}
+\label{ch:method}
+
+\section{Overview}
+% Pipeline: windows $\rightarrow$ DDPM on normal data $\rightarrow$ partial diffusion scoring $\rightarrow$ threshold.
+
+\section{Data preparation}
+\subsection{Sliding windows}
+\subsection{Normalization}
+\subsection{Train / validation / test splits}
+% Train on normal-only windows.
+
+\section{Model architecture}
+\subsection{1D U-Net conditioned on diffusion step}
+\subsection{Training with optional EMA}
+
+\section{Partial diffusion inference}
+% $k$ steps forward and $k$ steps reverse; ensemble over $\{k\}$.
+
+\section{Diffusion Reconstruction Error (DRE)}
+% Point-wise and series-level scores.
+
+\section{Denoising Attribution Map (DAM)}
+% Time $\times$ diffusion-step heatmap; optional per-channel maps.
+
+\section{Baselines for comparison}
+\subsection{LSTM Autoencoder}
+\subsection{Transformer Autoencoder}
+\subsection{TranAD}
+
+\section{Summary}
+% Method contributions in bullet form (for thesis defense).

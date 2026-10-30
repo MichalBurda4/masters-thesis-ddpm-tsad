@@ -20,5 +20,25 @@ logs/
 .DS_Store
 Thumbs.db
 
-# Osobiste notatki (opcjonalnie)
+# Osobiste notatki / drafty tekstu pracy (nie do GitHub)
 magisterka.txt
+thesis/chapter*.txt
+thesis/INSTRUKCJA_DLA_MNIE.txt
+thesis/O_CO_CHODZI.txt
+
+# LaTeX build artefacts
+thesis/**/*.aux
+thesis/**/*.log
+thesis/**/*.toc
+thesis/**/*.lof
+thesis/**/*.lot
+thesis/**/*.out
+thesis/**/*.bbl
+thesis/**/*.blg
+thesis/**/*.bcf
+thesis/**/*.run.xml
+thesis/**/*.synctex.gz
+thesis/**/*.fls
+thesis/**/*.fdb_latexmk
+thesis/main.pdf
+thesis/pdflatex*.log

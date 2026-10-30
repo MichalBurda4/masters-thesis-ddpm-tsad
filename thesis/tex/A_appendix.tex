@@ -1,0 +1,19 @@
+\chapter{Supplementary Material}
+\label{ch:appendix}
+
+\section{Hyperparameters}
+% Tables of learning rates, architectures, window sizes.
+
+\section{Additional figures}
+% Extra DAM plots, training curves.
+
+\section{Reproducibility commands}
+\begin{verbatim}
+python experiments/verify_setup.py
+python experiments/train_ddpm.py --config configs/smd.yaml
+python experiments/compare_all.py --config configs/smd.yaml
+python experiments/ablate_k.py --config configs/smd.yaml --quick
+\end{verbatim}
+
+\section{Repository}
+% \url{https://github.com/MichalBurda4/masters-thesis-ddpm-tsad}

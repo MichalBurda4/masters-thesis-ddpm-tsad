@@ -1,0 +1,24 @@
+\chapter{Background}
+\label{ch:background}
+
+\section{Multivariate time series}
+% Notation: $\mathbf{x}_{1:T} \in \mathbb{R}^{T \times C}$; sliding windows.
+
+\section{Anomaly types}
+% Point, contextual, collective; channel-level anomalies.
+
+\section{Denoising Diffusion Probabilistic Models}
+\subsection{Forward process}
+% $q(\mathbf{x}_t \mid \mathbf{x}_{t-1})$, $\alpha_t$, $\bar{\alpha}_t$.
+
+\subsection{Reverse process and training objective}
+% Noise prediction network; MSE loss.
+
+\subsection{Sampling and reconstruction}
+% Full vs.\ partial trajectories; DDIM (optional).
+
+\section{Reconstruction-based anomaly scoring}
+% Error as anomaly score; train-on-normal paradigm.
+
+\section{Thresholding}
+% F1 on validation; POT / percentile on normal scores.
