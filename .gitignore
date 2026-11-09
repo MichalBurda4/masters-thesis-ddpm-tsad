@@ -25,6 +25,11 @@ magisterka.txt
 thesis/chapter*.txt
 thesis/INSTRUKCJA_DLA_MNIE.txt
 thesis/O_CO_CHODZI.txt
+# Full written thesis draft — local only (do not push)
+thesis_local/
+thesis/thesis_with_footnotes.pdf
+thesis/img/
+thesis/main.loa
 
 # LaTeX build artefacts
 thesis/**/*.aux

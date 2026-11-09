@@ -36,6 +36,10 @@ In `main.tex`:
 
 Default programme line without `ds`/`umisi` is **Informatyka**. Confirm with the dean's office which label belongs on your title page for *Artificial Intelligence and Data Analysis*.
 
+The English title page shows **Faculty of Computer Science**, the Polish diploma title (`\titlePL`), and the English title (`\titleEN`) underneath.
+
+**Local-only full draft:** the filled thesis text lives in `../thesis_local/` (gitignored). Keep expanding chapters there; commit only the public skeleton under `thesis/` until you decide to publish the full manuscript.
+
 ## Intentionally omitted (simpler Overleaf)
 
 - **minted** (needs `-shell-escape` + Pygments)

@@ -188,7 +188,10 @@ linktocpage=true,
             \scshape\Large Diploma Thesis
         }\par
         \vspace*{3\baselineskip}%
-        {\sffamily\Large\bfseries \@titleEN}\par%
+        % EAIiIB-style bilingual titles: Polish diploma title first, English below.
+        {\sffamily\Large\bfseries \@titlePL}\par%
+        \vspace*{\baselineskip}%
+        {\sffamily\small\bfseries \@titleEN}\par%
         \vfill
         \par
         \begin{tabular}{ll}
